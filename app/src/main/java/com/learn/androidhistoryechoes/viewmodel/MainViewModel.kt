@@ -16,8 +16,10 @@ class MainViewModel: ViewModel() {
           val day = pair.second
           scopeNetLife {
                val model = Get<HistoryEchoes>(Api.HISTORY_ECHOES) {
-                    param("month", month)
-                    param("day", day)
+                    param("month", 6)
+                    param("day", 26)
+//                    param("month", month)
+//                    param("day", day)
                }.await()
                historyEchoesListLiveData.postValue(model.data)
           }
