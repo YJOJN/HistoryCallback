@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.learn.androidhistoryechoes.databinding.ActivityMainBinding
+import com.learn.androidhistoryechoes.view.activity.HistoryEchoesDetailActivity
 import com.learn.androidhistoryechoes.view.adapter.HistoryEchoesAdapter
 import com.learn.androidhistoryechoes.viewmodel.MainViewModel
 import java.text.SimpleDateFormat
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.rvHistoryEchoes.adapter = adapter
         adapter.setOnItemHistoryEchoesClickListener { view, model ->
-            Toast.makeText(this, model.title, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, model.title, Toast.LENGTH_SHORT).show()
+            HistoryEchoesDetailActivity.start(this, model.id)
         }
         Log.i(TAG, binding.tvData.text.toString())
         mainViewModel.getHistoryEchoesList(binding.tvData.text.toString())

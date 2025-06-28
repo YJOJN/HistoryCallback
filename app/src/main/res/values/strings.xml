@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">历史回声</string>
+    <string name="title_activity_history_echoes_detail">HistoryEchoesDetailActivity</string>
 </resources>
